@@ -2,7 +2,7 @@
 
 > **脚本适用条件**：仅适用于网站底部注明 **“Powered by SSPANEL”** 的机场。可以在机场首页的页脚处进行确认。
  例如:
-> ![Y0}SY$J`8837H8T5GXM1DZY](https://github.com/METEOR137/jichang_checkin/预览.png)
+> ![Y0}SY$J`8837H8T5GXM1DZY](https://github.com/METEOR137/jichang_checkin/blob/main/%E7%A4%BA%E4%BE%8B.png)
 
 ## 脚本作用
 
