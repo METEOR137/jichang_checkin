@@ -35,10 +35,10 @@
 
 点击 **`New repository secret`** 按钮，新建以下机密：
 
-| 参数名 | 是否必须 | 填写说明 |
+| 参数名 | 是否必须 | 说明 |
 | :--- | :--- | :--- |
 | `CONFIG` | **是** | 机场账号和密码。**格式为：一行账号，一行密码。** 例如：<br>`your-email@example.com`<br>`your-password` |
-| `URL` | **是** | 您要签到的机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如：`https://airport.example.com` |
+| `URL` | **是** | 机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如：`https://airport.example.com` |
 | `SCKEY` | 否 | Server酱推送必须 |
 | `WP_APP_TOKEN_ONE` | 否 | WxPusher必须,填写 `AppToken` |
 | `WXPUSHER_UID` | 否 | WxPusher推送必须 |
