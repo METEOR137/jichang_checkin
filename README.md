@@ -5,7 +5,7 @@
 >每天进行签到，获取额外的流量奖励
 
 ## 推送方式
-  🚀🚀该脚本采用的是<a href = 'https://sct.ftqq.com/r/5126'>Server酱</a>的推送方式，如果不需要推送，就下面的SCKEY参数的值设置为<b>空</b>就行
+  🚀🚀该脚本采用的是<a href = 'https://sct.ftqq.com/r/5126'>Server酱</a>或者WXpuser的推送方式，二者选其一即可，如果不需要推送，就下面的SCKEY参数的值设置为<b>空</b>就行
 
 # 部署过程
  
@@ -17,8 +17,10 @@
 | CONFIG| 是  | 账号密码  |
 | URL| 是  | 机场网址  |
 | SCKEY  | 否  | Sever酱秘钥  |
+| WP_APP_TOKEN_ONE  | 否  | WXpuser token  |
+| WXPUSHER_UID  | 否  | WXpuser uid  |
 <br/>
 <b>其中URL的值必须是机场网站的地址，例如：https://example.com</b>,尾部不要加''' / '''号 CONFIG写法：一行账号一行密码
 
 3. 到`Actions`中创建一个workflow，运行一次，以后每天项目都会自动运行。<br/>
-4. 最后，可以到Run sign查看签到情况，同时也会也会将签到详情推送到Sever酱。
+4. 最后，可以到Run sign查看签到情况，同时也会也会将签到详情推送到Sever酱或者Wxpuser。
