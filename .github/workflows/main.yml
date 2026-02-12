@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.10'  # 3.10.16 → 简写 '3.10' 即可，自动取最新 patch
+          python-version: '3.10'
 
       - name: Random sleep (anti-ban on schedule)
         if: github.event_name == 'schedule'
