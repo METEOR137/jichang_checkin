@@ -1,6 +1,6 @@
 name: "Common airport Checkin"
 
-on:
+于:
   schedule:
     - cron: "0 14 * * *"  # scheduled at 06:00 (UTC+8) everyday
   workflow_dispatch:
@@ -40,5 +40,8 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           PASSWD: ${{ secrets.PASSWD }}
           CONFIG: ${{ secrets.CONFIG }}
+          WP_APP_TOKEN: ${{ secrets.WP_APP_TOKEN }}
+          WXPUSHER_UID: ${{ secrets.WXPUSHER_UID }}
+          
         run: |
           python3 ./main.py
