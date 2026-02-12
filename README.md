@@ -1,27 +1,54 @@
-# 通用机场签到<br/>
->只要机场网站''' Powered by SSPANEL ''',就可以进行签到。要确认是否是''' Powered by SSPANEL '''，在机场首页滑倒最底端就可以看到。例如：
-![Y0}SY$J`8837H8T5GXM1DZY](https://user-images.githubusercontent.com/21276183/214764546-4f66333a-cb9b-420e-8260-697d26fb4547.png)
-## 作用
->每天进行签到，获取额外的流量奖励
+# 通用机场签到脚本部署指南
 
-## 推送方式
-  该脚本采用的是<a href = 'https://sct.ftqq.com/r/5126'>Server酱</a>或者<a href = 'https://wxpusher.zjiecode.com'>WXpusher</a>的推送方式，二者选其一即可，如果不需要推送，就下面的SCKEY参数的值设置为<b>空</b>就行
+> **脚本适用条件**：仅适用于网站底部注明 **“Powered by SSPANEL”** 的机场。您可以在机场首页的页脚处进行确认。
 
-# 部署过程
- 
-1. 右上角Fork此仓库
-2. 然后到`Settings`→`Secrets and variables`→`Actions` 新建以下机密：
+## 脚本作用
 
-| 参数   | 是否必须  | 内容  | 
-| ------------ | ------------ | ------------ |
-| CONFIG| 是  | 账号密码  |
-| URL| 是  | 机场网址  |
-| SCKEY  | 否  | Sever酱秘钥  |
-| WP_APP_TOKEN_ONE  | 否  | WXpuser token  |
-| WXPUSHER_UID  | 否  | WXpuser uid  |
-<br/>
-<b>其中URL的值必须是机场网站的地址，例如：https://example.com 尾部不要加'''/'''号</b>
-<b>GONFIG写法：一行账号一行密码</b>
+每日自动执行签到任务，为您的账户获取额外的流量奖励。
 
-3. 到`Actions`中创建一个workflow，运行一次，以后每天项目都会自动运行。<br/>
-4. 最后，可以到Run sign查看签到情况，同时也会也会将签到详情推送到Sever酱或者Wxpuser。
+## 消息推送（可选）
+
+脚本支持通过以下两种服务将签到结果推送到您的微信，**二者任选其一即可**。如果不需要推送功能，请将对应的密钥参数留空。
+
+| 推送服务 | 文档链接 |
+| :--- | :--- |
+| **Server酱** | [Server酱官网](https://sct.ftqq.com/) |
+| **WxPusher** | [WxPusher官网](https://wxpusher.zjiecode.com) |
+
+> **提示**：请根据上方链接的官方文档，分别注册并获取所需的密钥（SCKEY 或 WP_APP_TOKEN、UID）。
+
+---
+
+## 详细部署步骤
+
+请按顺序完成以下操作以启用自动签到。
+
+### 步骤一：Fork 项目仓库
+
+点击此项目页面的右上角 **`Fork`** 按钮，将仓库复制到自己的GitHub账户下。
+
+### 步骤二：配置密钥 (Secrets)
+
+在您Fork后的仓库中，依次进入 `Settings` → `Secrets and variables` → `Actions` 页面。
+
+点击 **`New repository secret`** 按钮，新建以下密钥：
+
+| 参数名 | 是否必须 | 填写说明 |
+| :--- | :--- | :--- |
+| `CONFIG` | **是** | 机场账号和密码。**格式为：一行账号，一行密码。** 例如：<br>`your-email@example.com`<br>`your-password` |
+| `URL` | **是** | 您要签到的机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如：`https://airport.example.com` |
+| `SCKEY` | 否 | Server酱推送必须 |
+| `WP_APP_TOKEN_ONE` | 否 | WxPusher必须,填写 `AppToken` |
+| `WXPUSHER_UID` | 否 | WxPusher推送必须 |
+
+### 步骤三：手动运行并启用工作流
+
+1.  进入仓库的 **`Actions`** 页面。
+2.  在左侧选择签到脚本对应的工作流（例如 `main.yml`）。
+3.  点击 **`Run workflow`** 按钮，手动触发一次执行，以启用该工作流。
+
+### 步骤四：查看运行结果
+
+-   此后，脚本将**每天自动运行**。
+-   您可以在 `Actions` 页面查看每次运行的详细日志和签到状态。
+-   如配置了推送服务，签到详情也会发送到所配置的服务。
