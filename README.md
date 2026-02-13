@@ -10,14 +10,14 @@
 
 ## 消息推送(可选)
 
-脚本支持通过以下两种服务将签到结果推送到您的微信，**二者任选其一即可**。如果不需要推送功能，请将对应的密钥参数留空。
+脚本支持通过以下两种推送服务，**二者任选其一即可**。如果不需要推送功能，将对应的密钥参数留空。
 
 | 推送服务 | 文档链接 |
 | :--- | :--- |
 | **Server酱** | [Server酱官网](https://sct.ftqq.com/) |
 | **WxPusher** | [WxPusher官网](https://wxpusher.zjiecode.com) |
 
-> **提示**：请根据上方链接的官方文档，分别注册并获取所需的密钥（SCKEY 或 WP_APP_TOKEN、UID）。
+> **提示**：根据上方链接的官方文档，分别注册并获取所需的密钥（SCKEY 或 WP_APP_TOKEN、WXPUSHER_UID）。
 
 ---
 
@@ -40,7 +40,7 @@
 | `CONFIG` | **是** | 机场账号和密码。**格式为：一行账号，一行密码。** 例如：<br>`your-email@example.com`<br>`your-password` |
 | `URL` | **是** | 机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如：`https://airport.example.com` |
 | `SCKEY` | 否 | Server酱推送必须 |
-| `WP_APP_TOKEN_ONE` | 否 | WxPusher必须,填写 `AppToken` |
+| `WP_APP_TOKEN` | 否 | WxPusher必须,填写 `AppToken` |
 | `WXPUSHER_UID` | 否 | WxPusher推送必须 |
 
 ### 步骤三：手动运行并启用工作流
