@@ -2,7 +2,7 @@ name: "Common airport Checkin"
 
 on:
   schedule:
-    - cron: "0 14 * * *"  # 每天 UTC 14:00 → 北京时间 22:00（视夏令时可能有1小时偏移）
+    - cron: "0 0 * * *"  # 每天 UTC 14:00 → 北京时间 22:00（视夏令时可能有1小时偏移）
   workflow_dispatch:
 
 env:
