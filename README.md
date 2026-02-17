@@ -41,7 +41,7 @@
 | `URL` | **是** | 机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如: `https://airport.example.com` |
 | `PUSH_METHOD` | 是 | 推送方式: <br>`serverchan`<br>`wxpusher`<br>`both` |
 | `SCKEY` | Server酱推送必须 |
-| `WP_APP_TOKEN` | WxPusher推送必须 |
+| `WXPUSHER_APPTOKEN` | WxPusher推送必须 |
 | `WXPUSHER_UID` | WxPusher推送必须 |
 
 ### 步骤三：手动运行并启用工作流
