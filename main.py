@@ -65,7 +65,7 @@ def sign(order, user, pwd):
         try:
             wxpusher_url = "https://wxpusher.zjiecode.com/api/send/message"
             payload = {
-                "appToken": WP_APP_TOKEN,
+                "appToken": WXPUSHER_APPTOKEN,
                 "content": content,
                 "summary": "机场签到",  # 可选，微信消息标题
                 "contentType": 1,  # 1=纯文本
