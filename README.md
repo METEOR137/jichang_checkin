@@ -38,7 +38,7 @@
 | 参数名 | 是否必须 | 说明 |
 | :--- | :--- | :--- |
 | `CONFIG` | **是** | 机场账号和密码。**格式为：一行账号，一行密码。** 例如: <br>`your-email@example.com`<br>`your-password` |
-| `URL` | **是** | 机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如: `https://airport.example.com` |
+| `URL` | **是** | 机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如: <br>`https://airport.example.com` |
 | `PUSH_METHOD` | 否 | 推送方式: <br>`serverchan`<br>`wxpusher` |
 | `SCKEY` | Server酱推送必须 |
 | `WXPUSHER_APPTOKEN` | WxPusher推送必须 |
