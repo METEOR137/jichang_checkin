@@ -44,7 +44,7 @@ jobs:
           SCKEY:   ${{ secrets.SCKEY }}
 
           # 推送方式二：WxPusher（目前最稳定推荐）
-          WP_APP_TOKEN:  ${{ secrets.WP_APP_TOKEN }}
+          WXPUSHER_APPTOKEN:  ${{ secrets.WXPUSHER_APPTOKEN }}
           WXPUSHER_UID:       ${{ secrets.WXPUSHER_UID }}
 
           # 控制推送方式（可选，不填默认 both）
