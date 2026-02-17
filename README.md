@@ -39,9 +39,10 @@
 | :--- | :--- | :--- |
 | `CONFIG` | **是** | 机场账号和密码。**格式为：一行账号，一行密码。** 例如：<br>`your-email@example.com`<br>`your-password` |
 | `URL` | **是** | 机场网站地址。<br>**⚠️ 重要：地址末尾不要添加 `/` 斜杠。** 例如:`https://airport.example.com` |
-| `PUSH_METHOD` | 否 | 推送方式:wxpusher/severchan |
+<br>`your-email@example.com`
+| `PUSH_METHOD` | 否 | 推送方式:<br>`serverchan`<br>`wxpusher`<br>`both` |
 | `SCKEY` | 否 | Server酱推送必须 |
-| `WP_APP_TOKEN` | 否 | WxPusher推送必须,填写 `AppToken` |
+| `WP_APP_TOKEN` | 否 | WxPusher推送必须 |
 | `WXPUSHER_UID` | 否 | WxPusher推送必须 |
 
 ### 步骤三：手动运行并启用工作流
