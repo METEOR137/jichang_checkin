@@ -1,29 +1,47 @@
-# This file defines your GitHub workflows.
-
-name: CI
+name: "Common airport Checkin"
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+env:
+  RUN_ENV: 'prod'
 
 jobs:
-  build:
+  checkin:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out code
+      - name: Checkout code
         uses: actions/checkout@v4.2.0
 
       - name: Set up Python
         uses: actions/setup-python@v5.2.0
         with:
-          python-version: '3.8'
+          python-version: '3.10'
 
-      - name: Install Dependencies
-        run: |
-          npm install
+      - name: Random sleep (anti-ban on schedule)
+        if: github.event_name == 'schedule'
+        run: sleep $(shuf -i 30-480 -n 1)
 
-      - name: Run tests
+      - name: Install dependencies
         run: |
-          npm test
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run airport check-in script
+        env:
+          URL:     ${{ secrets.URL }}
+          CONFIG:  ${{ secrets.CONFIG }}
+          EMAIL:   ${{ secrets.EMAIL }}
+          PASSWD:  ${{ secrets.PASSWD }}
+          SCKEY:   ${{ secrets.SCKEY }}
+          WXPUSHER_APPTOKEN:  ${{ secrets.WXPUSHER_APPTOKEN }}
+          WXPUSHER_UID:       ${{ secrets.WXPUSHER_UID }}
+          PUSH_METHOD: ${{ secrets.PUSH_METHOD || 'both' }}
+        run: python3 ./main.py
+
+      - name: Show timestamp (debug)
+        if: always()
+        run: date -u +"%Y-%m-%d %H:%M:%S UTC"
